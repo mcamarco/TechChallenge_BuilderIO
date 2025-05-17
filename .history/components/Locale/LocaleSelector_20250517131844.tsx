@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import {builder} from "@builder.io/react"
+import { ClientPageRoot } from "next/dist/client/components/client-page";
 
 interface LocaleSelectorProps {
   // locale: string; // Current locale
@@ -21,7 +22,7 @@ const LocaleSelector: React.FC<LocaleSelectorProps> = ({
   const handleChange=(e: React.ChangeEvent<HTMLSelectElement>) => {
     const newLocale=e.target.value;
     builder.setUserAttributes({locale:newLocale});
-    console.log("new Locale", newLocale)
+    console.log()
     window.location.reload()
   }
   return (

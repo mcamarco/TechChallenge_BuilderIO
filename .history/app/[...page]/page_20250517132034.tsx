@@ -35,8 +35,8 @@ export default function Page(props: PageProps) {
   useEffect(() => {
     const fetchContent = async () => {
       try {
-        const tempattr=builder.getUserAttributes()
-        console.log("user attr", tempattr)
+        temp
+        console.log("user attr", builder.getUserAttributes())
         // Fetch content from Builder based on locale and page path
         const fetchedContent = await builder
           .get(builderModelName, {

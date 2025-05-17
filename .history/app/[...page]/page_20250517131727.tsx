@@ -35,8 +35,6 @@ export default function Page(props: PageProps) {
   useEffect(() => {
     const fetchContent = async () => {
       try {
-        const tempattr=builder.getUserAttributes()
-        console.log("user attr", tempattr)
         // Fetch content from Builder based on locale and page path
         const fetchedContent = await builder
           .get(builderModelName, {
@@ -45,6 +43,7 @@ export default function Page(props: PageProps) {
               // locale: [locale],
               // check builder attributes, if it doesnt have anything, set en-US
               locale:builder.getUserAttributes()?.locale ?? "en-US",
+              console.log()
             },
           })
           .toPromise();

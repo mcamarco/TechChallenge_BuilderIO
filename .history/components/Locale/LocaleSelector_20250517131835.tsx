@@ -21,7 +21,7 @@ const LocaleSelector: React.FC<LocaleSelectorProps> = ({
   const handleChange=(e: React.ChangeEvent<HTMLSelectElement>) => {
     const newLocale=e.target.value;
     builder.setUserAttributes({locale:newLocale});
-    console.log("new Locale", newLocale)
+    con
     window.location.reload()
   }
   return (

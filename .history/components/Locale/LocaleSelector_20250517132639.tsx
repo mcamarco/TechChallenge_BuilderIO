@@ -24,7 +24,6 @@ const LocaleSelector: React.FC<LocaleSelectorProps> = ({
     console.log("new Locale", newLocale)
     // window.location.reload()
    const attributes = builder.getUserAttributes()
-   console.log("attributesnew",attributes)
   }
   return (
     <div>

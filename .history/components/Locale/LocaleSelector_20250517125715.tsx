@@ -4,7 +4,7 @@ import {builder} from "@builder.io/react"
 
 interface LocaleSelectorProps {
   locale: string; // Current locale
-  // onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void; 
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void; // Change handler
 }
 
 const localeOptions = [
@@ -31,7 +31,7 @@ const LocaleSelector: React.FC<LocaleSelectorProps> = ({
       <select
         id="locale-select"
         // value={locale} 
-        defaultValue="en-US"
+        value
         // onChange={onChange} 
         onchange={handleChange}
         style={{ padding: "0.5em 1em" }}

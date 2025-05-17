@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import {builder} from "@builder.io/react"
+import {builder} from 
 
 interface LocaleSelectorProps {
   locale: string; // Current locale
-  // onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void; 
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void; // Change handler
 }
 
 const localeOptions = [
@@ -18,11 +18,6 @@ const LocaleSelector: React.FC<LocaleSelectorProps> = ({
   onChange,
 }) => {
   // add local change function
-  const handleChange=(e: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLocale=e.target.value;
-    builder.setUserAttributes({locale:newLocale});
-    // window.location.reload()
-  }
   return (
     <div>
       <label htmlFor="locale-select" style={{ marginRight: "1em" }}>
@@ -30,10 +25,9 @@ const LocaleSelector: React.FC<LocaleSelectorProps> = ({
       </label>
       <select
         id="locale-select"
-        // value={locale} 
-        defaultValue="en-US"
-        // onChange={onChange} 
-        onchange={handleChange}
+        value={locale} // Controlled component
+        onChange={onChange} // Triggers parent's handleChange
+        // onchange = local change function (setuserattributes)
         style={{ padding: "0.5em 1em" }}
       >
         {localeOptions.map((opt) => (

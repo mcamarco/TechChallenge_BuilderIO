@@ -40,9 +40,7 @@ export default function Page(props: PageProps) {
           .get(builderModelName, {
             userAttributes: {
               urlPath: "/" + (props?.params?.page?.join("/") || ""),
-              // locale: [locale],
-              // check builder attributes, if it doesnt have anything, set en-US
-              locale:builder.getUserAttributes()?.locale ?? "en-US",
+              locale: [locale],
             },
           })
           .toPromise();
@@ -54,8 +52,7 @@ export default function Page(props: PageProps) {
     };
 
     fetchContent(); // Call fetchContent on dependency change
-  // }, [locale, props?.params?.page]); 
-  }, [props?.params?.page]);
+  }, [locale, props?.params?.page]); // Dependencies: locale and page
 
   return (
     <>

@@ -4,7 +4,7 @@ import {builder} from "@builder.io/react"
 
 interface LocaleSelectorProps {
   locale: string; // Current locale
-  // onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void; 
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void; 
 }
 
 const localeOptions = [

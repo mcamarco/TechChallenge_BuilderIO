@@ -54,9 +54,8 @@ export default function Page(props: PageProps) {
     };
 
     fetchContent(); // Call fetchContent on dependency change
-  // }, [locale, props?.params?.page]); 
-  }, [props?.params?.page]);
-
+  // }, [locale, props?.params?.page]); // Dependencies: locale and page
+  }
   return (
     <>
       {/* Pass current locale and handleChange to LocaleSelector */}

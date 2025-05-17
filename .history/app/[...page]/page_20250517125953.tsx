@@ -13,24 +13,24 @@ interface PageProps {
 }
 
 export default function Page(props: PageProps) {
-  // const [locale, setLocale] = useState("en-US"); // Current locale state
+  const [locale, setLocale] = useState("en-US"); // Current locale state
   const [content, setContent] = useState<any>(null); // Content from Builder
   const builderModelName = "page";
 
-  // onchange within locale selector
-  // const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-  //   const newLocale = e.target.value;
+  //onchange within locale selector
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newLocale = e.target.value;
 
-  //   // Only update locale if it is different from the current value
-  //   if (newLocale !== locale) {
-  //     setLocale(newLocale);
+    // Only update locale if it is different from the current value
+    if (newLocale !== locale) {
+      setLocale(newLocale);
 
-  //     // Update Builder user attributes
-  //     builder.setUserAttributes({
-  //       locale: newLocale,
-  //     });
-  //   }
-  // };
+      // Update Builder user attributes
+      builder.setUserAttributes({
+        locale: newLocale,
+      });
+    }
+  };
 
   useEffect(() => {
     const fetchContent = async () => {
@@ -40,9 +40,7 @@ export default function Page(props: PageProps) {
           .get(builderModelName, {
             userAttributes: {
               urlPath: "/" + (props?.params?.page?.join("/") || ""),
-              // locale: [locale],
-              // check builder attributes, if it doesnt have anything, set en-US
-              locale:builder.getUserAttributes()?.locale ?? "en-US",
+              locale: [locale],
             },
           })
           .toPromise();
@@ -54,8 +52,7 @@ export default function Page(props: PageProps) {
     };
 
     fetchContent(); // Call fetchContent on dependency change
-  // }, [locale, props?.params?.page]); 
-  }, [props?.params?.page]);
+  }, [locale, props?.params?.page]); // Dependencies: locale and page
 
   return (
     <>

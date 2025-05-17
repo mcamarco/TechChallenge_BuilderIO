@@ -17,6 +17,7 @@ export default function Page(props: PageProps) {
   const [content, setContent] = useState<any>(null); // Content from Builder
   const builderModelName = "page";
 
+  //onchange within locale selector
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newLocale = e.target.value;
 
@@ -56,7 +57,7 @@ export default function Page(props: PageProps) {
   return (
     <>
       {/* Pass current locale and handleChange to LocaleSelector */}
-      <LocaleSelector locale={locale} onChange={handleChange} />
+      {/* <LocaleSelector locale={locale} onChange={handleChange} /> */}
 
       {/* Render Builder content */}
       <RenderBuilderContent content={content} model={builderModelName} options={{ enrich: true }} />

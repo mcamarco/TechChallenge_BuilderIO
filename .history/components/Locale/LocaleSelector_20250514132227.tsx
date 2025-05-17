@@ -16,7 +16,6 @@ const LocaleSelector: React.FC<LocaleSelectorProps> = ({
   locale,
   onChange,
 }) => {
-  // add local change function
   return (
     <div>
       <label htmlFor="locale-select" style={{ marginRight: "1em" }}>
@@ -24,9 +23,8 @@ const LocaleSelector: React.FC<LocaleSelectorProps> = ({
       </label>
       <select
         id="locale-select"
-        value={locale} // Controlled component
-        onChange={onChange} // Triggers parent's handleChange
-        // onchange = local change function (setuserattributes)
+        value={locale} 
+        onChange={onChange} 
         style={{ padding: "0.5em 1em" }}
       >
         {localeOptions.map((opt) => (

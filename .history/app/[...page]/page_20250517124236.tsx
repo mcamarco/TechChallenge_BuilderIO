@@ -57,7 +57,7 @@ export default function Page(props: PageProps) {
   return (
     <>
       {/* Pass current locale and handleChange to LocaleSelector */}
-      <LocaleSelector locale={locale} onChange={handleChange} />
+      {/* <LocaleSelector locale={locale} onChange={handleChange} /> */}
 
       {/* Render Builder content */}
       <RenderBuilderContent content={content} model={builderModelName} options={{ enrich: true }} />

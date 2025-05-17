@@ -3,7 +3,7 @@ import React from "react";
 import {builder} from "@builder.io/react"
 
 interface LocaleSelectorProps {
-  // locale: string; // Current locale
+  locale: string; // Current locale
   // onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void; 
 }
 
@@ -14,7 +14,7 @@ const localeOptions = [
 ];
 
 const LocaleSelector: React.FC<LocaleSelectorProps> = ({
-  // locale,
+  locale,
   // onChange,
 }) => {
   // add local change function
